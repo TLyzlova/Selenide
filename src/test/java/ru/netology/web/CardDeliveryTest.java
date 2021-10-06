@@ -26,7 +26,7 @@ public class CardDeliveryTest {
         $(byClassName("button__text")).click();
         $("[data-test-id=notification]").shouldBe((appear), Duration.ofSeconds(15));
         $("[data-test-id=notification]").shouldHave(exactText("Успешно!" + "\n"
-                   + "Встреча успешно забронирована на " + "09.10.2021"));
+                   + "Встреча успешно забронирована на " + nextDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))));
 
     }
 }
